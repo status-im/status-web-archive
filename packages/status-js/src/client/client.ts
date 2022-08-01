@@ -70,7 +70,9 @@ class Client {
     const waku = await Waku.create({
       bootstrap: {
         default: false,
-        peers,
+        peers: [
+          '/dns4/node-01.gc-us-central1-a.go-waku.test.statusim.net/tcp/443/wss/p2p/16Uiu2HAmPz63Xc6AuVkDeujz7YeZta18rcdau3Y1BzaxKAfDrBqz',
+        ],
       },
       relayKeepAlive: 15,
       libp2p: { config: { pubsub: { enabled: true, emitSelf: true } } },
